@@ -1,0 +1,208 @@
+<div id="pcoded" class="pcoded">
+  <div class="pcoded-overlay-box"></div>
+  <div class="pcoded-container navbar-wrapper">
+    <!-- [ Header ] start -->
+    <nav class="navbar header-navbar pcoded-header">
+      <div class="navbar-wrapper">
+        <div class="navbar-logo">
+          <a href="/">
+           Demo For Ministry of Justice
+          </a>
+          <a class="mobile-menu" id="mobile-collapse" href="#!">
+            <i class="feather icon-menu"></i>
+          </a>
+          <a class="mobile-options waves-effect waves-light">
+            <i class="feather icon-more-horizontal"></i>
+          </a>
+        </div>
+        <div class="navbar-container container-fluid">
+          <!--<ul class="nav-left">
+            <li>
+              <a href="#!" onclick="javascript:toggleFullScreen()" class="waves-effect waves-light">
+                <i class="full-screen feather icon-maximize"></i>
+              </a>
+            </li>
+            <li class="header-search">
+                                      <div class="main-search morphsearch-search">
+                                        <div class="input-group">
+                                          <span class="input-group-prepend search-close">
+                                            <i class="feather icon-x input-group-text"></i>
+                                          </span>
+                                          <input type="text" class="form-control" placeholder="Enter Keyword">
+                                          <span class="input-group-append search-btn">
+                                            <i class="feather icon-search input-group-text"></i>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </li>
+          </ul> -->
+          <ul class="nav-right">
+
+            <li class="user-profile header-notification">
+              <div class="dropdown-primary dropdown">
+                <div class="dropdown-toggle" data-toggle="dropdown">
+                  <i class="icon feather icon-settings"></i>
+                  <!-- <img src="/assets/files/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                                                            <span>John Doe</span>
+                                                            <i class="feather icon-chevron-down"></i> -->
+                </div>
+                <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                  <li class="drp-u-details loggedin-username-background">
+                    <!-- <img src="/assets/files/assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image"> -->
+                    <span>{{ authenticationService.getUserInformation().displayName }}</span>
+                    <!-- <a  class="dud-logout" title="Logout">
+                      <i class="feather icon-log-out"></i>
+                    </a> -->
+                  </li>
+
+                  <li>
+                    <a routerLink="/profile/change-password">
+                      <i class="feather icon-user"></i> Change Password
+                    </a>
+                  </li>
+
+                  <li>
+                    <a routerLink="/profile/change-username">
+                      <i class="feather icon-user"></i> Change Username
+                    </a>
+                  </li>
+
+                  <li class="" (click)="authenticationService.logout()">
+
+                    <span>Logout</span>
+                    <a class="dud-logout" title="Logout">
+                      <i class="feather icon-log-out" style="
+                          color: #f0466b;
+                          padding-right: 0;
+                          position: absolute;
+                          right: 0;
+                          top: 0;
+                          height: 100%;
+                          width: 40px;
+                          display: -webkit-box;
+                          display: -ms-flexbox;
+                          display: flex;
+                          -webkit-box-align: center;
+                          -ms-flex-align: center;
+                          align-items: center;
+                          -webkit-box-pack: center;
+                          -ms-flex-pack: center;
+                          justify-content: center;
+                          font-weight: bold;
+                      "></i>
+                    </a>
+
+                  </li>
+                  <!-- <li>
+                                            <a href="#!">
+                                              <i class="feather icon-settings"></i> Settings
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="user-profile.html">
+                                              <i class="feather icon-user"></i> Profile
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="email-inbox.html">
+                                              <i class="feather icon-mail"></i> My Messages
+                                            </a>
+                                          </li>
+                                          <li>
+                                            <a href="auth-lock-screen.html">
+                                              <i class="feather icon-lock"></i> Lock Screen
+                                            </a>
+                                          </li> -->
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="pcoded-main-container">
+      <div class="pcoded-wrapper">
+        <!-- [ navigation menu ] start -->
+        <nav class="pcoded-navbar">
+          <div class="nav-list">
+            <div class="pcoded-inner-navbar main-menu">
+              <div class="pcoded-navigation-label">Navigation</div>
+              <ul class="pcoded-item pcoded-left-item">
+                <li class="pcoded-hasmenu active pcoded-trigger">
+                  <a href="javascript:void(0)" class="waves-effect waves-dark">
+                    <span class="pcoded-micon">
+                      <i class="feather icon-home"></i>
+                    </span>
+                    <span class="pcoded-mtext">Home</span>
+                  </a>
+                  <ul class="pcoded-submenu">
+                  
+
+                
+
+                    <li class=" pcoded-hasmenu" routerLinkActive="active pcoded-trigger" [routerLinkActiveOptions]="{exact: true}" *ngIf="authenticationService.hasRole('feature_Patients')">
+                      <a href="javascript:void(0)" class="waves-effect waves-dark">
+                        <span class="pcoded-mtext">Patients</span>
+                      </a>
+                      <ul class="pcoded-submenu">
+                        <li class="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                          <a class="waves-effect waves-dark" routerLink="/patient">
+                            <span class="pcoded-mtext">List</span>
+                          </a>
+                        </li>
+                        <li class="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                          <a class="waves-effect waves-dark" routerLink="/patient/add">
+                            <span class="pcoded-mtext">Add</span>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="authenticationService.hasRole('feature_manage-user-roles')">
+                      <a href="javascript:void(0)" class="waves-effect waves-dark" routerLink="/manae-userg-roles">
+                        <span class="pcoded-mtext">Manage User Roles</span>
+                      </a>
+
+                    </li>
+
+              
+                  </ul>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- [ navigation menu ] end -->
+        <div class="pcoded-content">
+          <!-- [ breadcrumb ] start -->
+          <app-breadcrumbs></app-breadcrumbs>
+          <!-- [ breadcrumb ] end -->
+          <div class="pcoded-inner-content">
+            <!-- Main-body start -->
+            <div class="main-body">
+              <div class="page-wrapper">
+
+                <!-- Page-body start -->
+                <div class="page-body">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <router-outlet></router-outlet>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Page-body end -->
+          </div>
+        </div>
+      </div>
+      <!-- [ style Customizer ] start -->
+      <div id="styleSelector">
+      </div>
+      <!-- [ style Customizer ] end -->
+    </div>
+  </div>
+</div>
+

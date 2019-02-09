@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header">
+    <h5>Profile</h5>
+  </div>
+  <div class="card-block">
+    <h4 class="sub-title">Change Username</h4>
+
+    <form (ngSubmit)="onSubmit()" #modelForm="ngForm">
+
+      <div class="form-group row" [class.has-danger]="newUsernameControl.invalid && (newUsernameControl.dirty || newUsernameControl.touched)">
+        <div class="col-sm-2">
+          <label class="col-form-label" for="newUsername">New Username</label>
+        </div>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" [class.form-control-danger]="newUsernameControl.invalid && (newUsernameControl.dirty || newUsernameControl.touched)"
+            name="password" required [(ngModel)]="model.newUsername" #newUsernameControl="ngModel">
+          <app-validation-messages [controlObject]="newUsernameControl"></app-validation-messages>
+          <div class="col-form-label" *ngIf="customErrorMessage" style="color: #f0466b;">
+            {{customErrorMessage}}
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-2"></label>
+        <div class="col-sm-10">
+          <button type="submit" class="btn btn-primary m-b-0" [class.disabled]="!modelForm.form.valid" [disabled]="!modelForm.form.valid">Submit</button>
+          <a routerLink="/dhashboard" class="btn btn-danger waves-effect">Cancel</a>
+        </div>
+        <div class="col-sm-10 offset-sm-2">
+          <i style="font-size: 0.9em;">(Changing your username will require you to re-login)</i>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

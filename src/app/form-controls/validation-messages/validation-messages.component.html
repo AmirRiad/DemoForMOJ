@@ -1,0 +1,21 @@
+<div class="col-form-label" *ngIf="controlObject.invalid && (controlObject.dirty || controlObject.touched)">
+
+  <div *ngIf="controlObject.errors.required">
+    This field is rquired...
+  </div>
+
+  <div *ngIf="controlObject.errors.minlength">
+    This field must be at least {{ controlObject.getError('minlength').requiredLength }} characters long...
+  </div>
+
+  <div *ngIf="controlObject.errors.maxlength">
+      This field must not exceed {{ controlObject.getError('maxlength').requiredLength }} characters long...
+   </div>
+
+   <div *ngIf="controlObject.errors.appRegexValidation">
+      {{ controlObject.getError('appRegexValidation').errorMessage }}
+   </div>
+
+ 
+
+</div>
